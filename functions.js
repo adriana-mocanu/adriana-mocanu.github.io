@@ -6,32 +6,30 @@ function show(id) {
     document.getElementById(id).style.display = '';
 }
 
-function showHomePage() {
+function hideAllPages () {
+    hide("home");
     hide("skills");
     hide("languages");
-    hide("projects")
+    hide("projects");
+}
+
+function showHomePage() {
+    hideAllPages();
     show("home"); 
     }
 
 function showSkillsPage() {
-    hide("home"); 
-    hide("languages"); 
-    hide("projects"); 
-    
+    hideAllPages();
     show("skills"); 
     }
 
 function showLanguagesPage() {
-    hide("skills"); 
-    hide("home"); 
-    hide("projects"); 
+    hideAllPages();
     show("languages"); 
     }
 
 function showProjectsPage() {
-    hide("home"); 
-    hide("skills"); 
-    hide("languages"); 
+    hideAllPages();
     show("projects"); 
     }
 
