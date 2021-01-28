@@ -30,12 +30,13 @@ function listenMenuClicks() {
 
 listenMenuClicks (); 
 
+showPage("skills");
 
-var allSkills = `
-    <li class="favorite-skill">HTML</li>
-    <li>CSS</li>
-    <li class="favorite-skill">JS</li>
-`;
+var allSkills = [
+    `<li class="favorite-skill">HTML</li>`,
+    `<li>CSS</li>`,
+    `<li class="favorite-skill">JS</li>`
+];
 
 var skillsEl = document.querySelector("#skills ul");
-skillsEl.innerHTML = allSkills;
+skillsEl.innerHTML = allSkills.join("");
