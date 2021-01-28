@@ -3,7 +3,6 @@ function hide(id) {
     el.style.display = 'none';
 }
 function show(id) {
-    console.info("show id=", id);
     document.getElementById(id).style.display = '';
 }
 
@@ -19,9 +18,18 @@ function hideAllPages () {
 }
 
 function showPage(pageId) {
-    console.warn("pageId=", pageId);
     hideAllPages();
     show(pageId); 
     }
     
-
+function listenMenuClicks() {
+    document.addEventListener("click", function(e){
+        var link = e.target;
+        if (link.matches("#top-menu-bar a")) {
+            var id = link.innerHTML.toLowerCase();
+            console.warn('click', id);
+            showPage(id);
+        }
+    });
+}
+listenMenuClicks (); 
