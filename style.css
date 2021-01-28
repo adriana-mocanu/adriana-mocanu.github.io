@@ -102,6 +102,10 @@ footer a {
   color: royalblue;
   font-weight: bold;
 }
+#skills li span {
+  color: red;
+}
+
 td {
   padding: 5px;
 }
