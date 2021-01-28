@@ -40,7 +40,7 @@ var allSkills = [
 //TODO class="favorite-skill"
 
 var allSkillsHtml = allSkills.map(function(skill){
-    return `<li>` +skill + `</li>`;
+    return `<li>${skill}</li>`;
 });
 
 var skillsEl = document.querySelector("#skills ul");
