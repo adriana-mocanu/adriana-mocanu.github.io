@@ -3,6 +3,7 @@ function hide(id) {
     el.style.display = 'none';
 }
 function show(id) {
+    console.info("show id=", id);
     document.getElementById(id).style.display = '';
 }
 
@@ -17,23 +18,10 @@ function hideAllPages () {
     }
 }
 
-function showHomePage() {
+function showPage(pageId) {
+    console.warn("pageId=", pageId);
     hideAllPages();
-    show("home"); 
+    show(pageId); 
     }
-
-function showSkillsPage() {
-    hideAllPages();
-    show("skills"); 
-    }
-
-function showLanguagesPage() {
-    hideAllPages();
-    show("languages"); 
-    }
-
-function showProjectsPage() {
-    hideAllPages();
-    show("projects"); 
-    }
+    
 
