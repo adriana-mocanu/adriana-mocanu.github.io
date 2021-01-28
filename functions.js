@@ -7,13 +7,12 @@ function show(id) {
 }
 
 function hideAllPages () {
-    var pages = document.querySelectorAll(".page");
-
-    for(var i = 0; i < pages.length; i++) {
-        var page = pages[i];
-        hide(page.id);
-        //hide(pages[i].id);
-        //hide(pagesIds[i]);
+    var pages = Array.from(document.querySelectorAll(".page")) ;
+    var pageIds = pages.map(function(page){
+        return page.id;
+    });
+    for(var i = 0; i < pageIds.length; i++) {
+        hide(pageIds[i]);
     }
 }
 
@@ -27,7 +26,6 @@ function listenMenuClicks() {
         var link = e.target;
         if (link.matches("#top-menu-bar a")) {
             var id = link.innerHTML.toLowerCase();
-            console.warn('click', id);
             showPage(id);
         }
     });
