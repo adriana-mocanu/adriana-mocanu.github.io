@@ -11,9 +11,10 @@ function hideAllPages () {
     var pageIds = pages.map(function(page){
         return page.id;
     });
-    for(var i = 0; i < pageIds.length; i++) {
-        hide(pageIds[i]);
-    }
+
+    pageIds.forEach(function(pageId){
+        hide(pageId);
+    });
 }
 
 function showPage(pageId) {
