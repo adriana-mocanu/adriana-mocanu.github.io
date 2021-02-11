@@ -52,6 +52,9 @@ fetch("skills.json")
     return r.json();
 })
 .then(function(skills){
+    skills.sort(function(s1, s2){
+        return s2.endorsements - s1.endorsements;
+    });
     showSkills(skills);
 });
 
