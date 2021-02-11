@@ -35,9 +35,9 @@ listenMenuClicks ();
 showPage("skills");
 
 var allSkills = [
-    { name: "HTML", favorite: true, endorsements: 5 },
-    { name: "CSS", favorite: false, endorsements: 4 },
-    { name: "JS", favorite: true, endorsements: 6 }
+    //{ name: "HTML", favorite: true, endorsements: 5 },
+   // { "name": "CSS", favorite: false, endorsements: 4 },
+  //  { 'name': 'JS', favorite: true, endorsements: 6 }
 ];
 //TODO class="favorite-skill"
 
@@ -50,4 +50,15 @@ function showSkills (skills) {
     skillsEl.innerHTML = allSkillsHtml.join("");
 }
 
-showSkills(allSkills);
+fetch("skills.json")
+    .then(function(r) {
+    return r.json();
+})
+.then(function(skills){
+    console.warn("done", skills);
+    showSkills(skills);
+});
+
+
+
+//showSkills(allSkills);
