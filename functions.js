@@ -8,8 +8,7 @@ function show(id) {
 }
 
 function hideAllPages () {
-    let pages = Array.from(document.querySelectorAll(".page"));
-    pages = [];
+    const pages = Array.from(document.querySelectorAll(".page"));
     pages.forEach(function(page){
         hide(page.id);
     });
@@ -24,9 +23,9 @@ function listenMenuClicks() {
     document.addEventListener("click", function(e){
         const link = e.target;
         if (link.matches("#top-menu-bar a")) {
-            //var id = link.innerHTML.toLowerCase();
+             // to ask about this line in private // FIXED while watching the video stupid :D 
             const id = link.getAttribute("data-id");
-            console.warn("id", id);
+            //console.warn("id", id);
             showPage(id);
         }
     });
@@ -36,13 +35,14 @@ listenMenuClicks ();
 
 showPage("skills");
 
-const allSkills = [];
+let allSkills = [];
 
 function showSkills (skills) {
     const allSkillsHtml = skills.map(function(skill){
         const cls = skill.favorite ? "favorite-skill" : "";
         return `<li class="${cls}">
-        ${skill.name} <span>(${skill.endorsements})</span></li>`;
+        ${skill.name} <span>(${skill.endorsements})</span>
+        </li>`;
     });
     
     const skillsEl = document.querySelector("#skills ul");
@@ -57,11 +57,14 @@ fetch("skills.json")
     skills.sort(function(s1, s2){
         return s2.endorsements - s1.endorsements;
     });
+    allSkills = skills;
     showSkills(skills);
 });
+    
 
 
 
 //showSkills(allSkills);
 
 
+//check the exercises from the video ES5 at the beginning
